@@ -17,11 +17,19 @@ package object Canicas {
     } yield canicasPosiblesFrasco(f, c)
   }
 
-  /*
-  def mezclarLCanicas(lc:List[Distr]): List[Distr] = {
 
+  def mezclarLCanicas(lc:List[Distr]): List[Distr] = {
+    lc match {
+      case Nil => List(Nil)
+      case x :: xs => for {
+        i <- x
+        j <- mezclarLCanicas(xs)
+      } yield i :: j
+    }
   }
 
+
+  /*
   def distribucion(m:Int, n:Int, c:Int):List[Distr] = {
 
   }
