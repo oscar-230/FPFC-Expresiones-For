@@ -8,14 +8,16 @@ package object Canicas {
     for {
       canicas <- (0 to c).toList
     } yield (f, canicas)
+  }
 
+
+  def canicasPorFrasco(n: Int, c: Int): List[Distr] = {
+    for {
+      f <- (1 to n).toList
+    } yield canicasPosiblesFrasco(f, c)
   }
 
   /*
-  def canicasPorFrasco(n: Int, c: Int): List[Distr] = {
-
-  }
-
   def mezclarLCanicas(lc:List[Distr]): List[Distr] = {
 
   }
