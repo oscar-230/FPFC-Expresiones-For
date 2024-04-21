@@ -3,15 +3,22 @@ package object Canicas {
   type Frasco = (Int, Int)
   type Distr = List[Frasco]
 
+
   def canicasPosiblesFrasco(f: Int, c: Int): List[Frasco] = {
-    (0 to c).toList.map(canicas => (f, canicas))
+    for {
+      canicas <- (0 to c).toList
+    } yield (f, canicas)
   }
+
 
   def canicasPorFrasco(n: Int, c: Int): List[Distr] = {
-    (1 to n).toList.map(f => canicasPosiblesFrasco(f, c))
+    for {
+      f <- (1 to n).toList
+    } yield canicasPosiblesFrasco(f, c)
   }
 
-  def mezclarLCanicas(lc: List[Distr]): List[Distr] = {
+
+  def mezclarLCanicas(lc:List[Distr]): List[Distr] = {
     lc match {
       case Nil => List(Nil)
       case x :: xs => for {
