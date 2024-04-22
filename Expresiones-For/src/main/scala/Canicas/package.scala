@@ -18,7 +18,7 @@ package object Canicas {
   }
 
 
-  def mezclarLCanicas(lc:List[Distr]): List[Distr] = {
+  def mezclarLCanicas(lc: List[Distr]): List[Distr] = {
     lc match {
       case Nil => List(Nil)
       case x :: xs => for {
@@ -35,18 +35,16 @@ package object Canicas {
   }
 
   def agrupaciones(m: Int): List[List[Int]] = {
+    val frascos = distribucion(m, m, m).flatMap(_.map(_._1))
     def combinar(n: Int, lista: List[Int]): List[List[Int]] = {
       if (n == 0) List(Nil)
       else {
         for {
           i <- lista
           j <- combinar(n - i, lista.filter(_ > i))
-          result <- if (distribucion(m, i, i).nonEmpty) List(i :: j) else Nil
-        } yield result
+        } yield i :: j
       }
     }
-
-    val listaElementos = (1 to m).toList
-    combinar(m, listaElementos)
+    combinar(m, frascos.distinct.sorted)
   }
 }
