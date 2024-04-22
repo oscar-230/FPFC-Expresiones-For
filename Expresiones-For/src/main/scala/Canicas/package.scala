@@ -41,7 +41,8 @@ package object Canicas {
         for {
           i <- lista
           j <- combinar(n - i, lista.filter(_ > i))
-        } yield i :: j
+          result <- if (distribucion(m, i, i).nonEmpty) List(i :: j) else Nil
+        } yield result
       }
     }
 
