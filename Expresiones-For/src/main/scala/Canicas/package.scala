@@ -1,3 +1,9 @@
+/**
+ * Taller #4 Las canicas y los frascos
+ * Package.scala
+ * Oscar David Cuaical Lopez (202270657)
+ * Jose Miguel Fuertes Benavides (202224623)
+ */
 package object Canicas {
 
   type Frasco = (Int, Int)
@@ -33,6 +39,7 @@ package object Canicas {
     val combinaciones = mezclarLCanicas(canicas)
     combinaciones.filter(_.map(_._2).sum == m)
   }
+
 
   def agrupaciones(m: Int): List[List[Int]] = {
     val frascos = distribucion(m, m, m).flatMap(_.map(_._1))
