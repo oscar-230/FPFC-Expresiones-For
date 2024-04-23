@@ -34,11 +34,13 @@ package object Canicas {
     }
   }
 
-  def distribucion(m: Int, n: Int, c: Int): List[Distr] = {
-    val canicas = canicasPorFrasco(n, c)
-    val combinaciones = mezclarLCanicas(canicas)
-    combinaciones.filter(_.map(_._2).sum == m)
-  }
+
+ def distribucion(m:Int, n:Int, c:Int): List[Distr] = {
+   for {
+     combinacion <- mezclarLCanicas(canicasPorFrasco(n, c))
+     if combinacion.map(_._2).sum ==m
+   } yield combinacion
+ }
 
 
   def agrupaciones(m: Int): List[List[Int]] = {

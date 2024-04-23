@@ -58,7 +58,7 @@ distribucion(3,1,3)
 agrupaciones(5)
 agrupaciones(6)
 agrupaciones(7)
-//agrupaciones(8)
+agrupaciones(8)
 //agrupaciones(10)
 
 val res = List(
