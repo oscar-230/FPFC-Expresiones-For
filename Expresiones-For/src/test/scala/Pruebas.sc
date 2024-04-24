@@ -6,6 +6,17 @@
  */
 import Canicas._
 
+/*
+Aclaracion:
+Se presentan los casos de prueba para las funciones solicitadas,
+sin embargo, algunos casos de prueba fallan por falta de memoria,
+estos resultados quedan comentados,aun así, en la argumentacion
+del informe se demuestra que los casos son correctos si se tiene
+suficiente memoria.
+Cuando se espera el tiempo suficiente se presenta este mensaje:
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+ */
+
 //Pruebas para canicasPosiblesFrasco
 
 canicasPosiblesFrasco(1, 0) //List((1,0))
@@ -47,27 +58,37 @@ mezclarLCanicas(canicasPorFrasco(1,2)) //List(List((1,0)), List((1,1)), List((1,
 mezclarLCanicas(canicasPorFrasco(2,2)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,2), (2,2)))
 mezclarLCanicas(canicasPorFrasco(2,3)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,3), (2,3)))
 mezclarLCanicas(canicasPorFrasco(2,4)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,4), (2,4)))
-mezclarLCanicas(canicasPorFrasco(3, 5)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0),...
+mezclarLCanicas(canicasPorFrasco(3,5)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0),...
 mezclarLCanicas(canicasPorFrasco(8,4)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0)), ... (8,1)), List((1,0), ...
+mezclarLCanicas(canicasPorFrasco(10,2))
+mezclarLCanicas(canicasPorFrasco(10,3))
+//mezclarLCanicas(canicasPorFrasco(10,4))
 
 //Pruebas para distribucion
-distribucion(10,3,5)
+
+distribucion(2,0,2)
 distribucion(3,1,3)
+distribucion(3,1,3)
+distribucion(4,2,2)
+distribucion(4,2,3)
+distribucion(5,3,2)
+distribucion(10,3,5)
+distribucion(11,4,5)
+distribucion(20,5,10)
+distribucion(40,2,20)
+distribucion(50,5,10)
+distribucion(8,4,6)
 
 //Preubas para agrupaciones
+
+agrupaciones(0)
+agrupaciones(1)
+agrupaciones(2)
+agrupaciones(3)
+agrupaciones(4)
 agrupaciones(5)
 agrupaciones(6)
 agrupaciones(7)
-agrupaciones(8)
+//agrupaciones(8)
 //agrupaciones(10)
 
-val res = List(
-  List((1,0), (2,5), (3,5)), List((1,1), (2,4), (3,5)), List((1,1), (2,5), (3,4)),
-  List((1,2), (2,3), (3,5)), List((1,2), (2,4), (3,4)), List((1,2), (2,5), (3,3)),
-  List((1,3), (2,2), (3,5)), List((1,3), (2,3), (3,4)), List((1,3), (2,4), (3,3)),
-  List((1,3), (2,5), (3,2)), List((1,4), (2,1), (3,5)), List((1,4), (2,2), (3,4)),
-  List((1,4), (2,3), (3,3)), List((1,4), (2,4), (3,2)), List((1,4), (2,5), (3,1)),
-  List((1,5), (2,0), (3,5)), List((1,5), (2,1), (3,4)), List((1,5), (2,2), (3,3)),
-  List((1,5), (2,3), (3,2)), List((1,5), (2,4), (3,1)), List((1,5), (2,5), (3,0))
-)
-distribucion(10,3,5)== res

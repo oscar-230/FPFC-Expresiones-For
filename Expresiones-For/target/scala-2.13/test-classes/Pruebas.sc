@@ -47,8 +47,11 @@ mezclarLCanicas(canicasPorFrasco(1,2)) //List(List((1,0)), List((1,1)), List((1,
 mezclarLCanicas(canicasPorFrasco(2,2)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,2), (2,2)))
 mezclarLCanicas(canicasPorFrasco(2,3)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,3), (2,3)))
 mezclarLCanicas(canicasPorFrasco(2,4)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,4), (2,4)))
-mezclarLCanicas(canicasPorFrasco(3, 5)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0),...
+mezclarLCanicas(canicasPorFrasco(3,5)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0),...
 mezclarLCanicas(canicasPorFrasco(8,4)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0)), ... (8,1)), List((1,0), ...
+mezclarLCanicas(canicasPorFrasco(10,2))
+mezclarLCanicas(canicasPorFrasco(10,3))
+//mezclarLCanicas(canicasPorFrasco(10,4))
 
 //Pruebas para distribucion
 distribucion(10,3,5)
