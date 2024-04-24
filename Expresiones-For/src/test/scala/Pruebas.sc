@@ -60,35 +60,36 @@ mezclarLCanicas(canicasPorFrasco(2,3)) //List(List((1,0), (2,0)), List((1,0), (2
 mezclarLCanicas(canicasPorFrasco(2,4)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,4), (2,4)))
 mezclarLCanicas(canicasPorFrasco(3,5)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0),...
 mezclarLCanicas(canicasPorFrasco(8,4)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0)), ... (8,1)), List((1,0), ...
-mezclarLCanicas(canicasPorFrasco(10,2))
-mezclarLCanicas(canicasPorFrasco(10,3))
+mezclarLCanicas(canicasPorFrasco(10,2)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0), ... (9,1), (10,1)), ...,(7,0), (8,1), (9,0)...
+mezclarLCanicas(canicasPorFrasco(10,3)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0), ....,(10,3)), List((1,0), (2,0), (3,0), ...(7,0), (8,0), (9,2)...
 //mezclarLCanicas(canicasPorFrasco(10,4))
 
 //Pruebas para distribucion
 
-distribucion(2,0,2)
-distribucion(3,1,3)
-distribucion(3,1,3)
-distribucion(4,2,2)
-distribucion(4,2,3)
-distribucion(5,3,2)
-distribucion(10,3,5)
-distribucion(11,4,5)
-distribucion(20,5,10)
-distribucion(40,2,20)
-distribucion(50,5,10)
-distribucion(8,4,6)
+distribucion(2,0,2) //List()
+distribucion(4,1,3) //List()
+distribucion(3,1,3) //List(List((1,3)))
+distribucion(4,2,2) //List(List((1,2), (2,2)))
+distribucion(40,2,20) //List(List((1,20), (2,20)))
+distribucion(50,5,10) //List(List((1,10), (2,10), (3,10), (4,10), (5,10)))
+distribucion(4,2,3) //List(List((1,1), (2,3)), List((1,2), (2,2)), List((1,3), (2,1)))
+distribucion(5,3,2) //List(List((1,1), (2,2), (3,2)), List((1,2), (2,1), (3,2)), List((1,2), (2,2), (3,1)))
+distribucion(10,3,5) //List(List((1,0), (2,5), (3,5)), List((1,1), (2,4), (3,5)), List((1,1), (2,5), (3,4)), List((1,2), (2,3), (3,5)), List((1,2), (2,4), (3,4)), ...
+distribucion(11,4,5) //List(List((1,0), (2,1), (3,5), (4,5)), List((1,0), (2,2), (3,4), (4,5)), List((1,0), (2,2), (3,5), (4,4)), List((1,0), (2,3), (3,3), (4,5)), ...
+distribucion(20,5,10) //List(List((1,0), (2,0), (3,0), (4,10), (5,10)), List((1,0), (2,0), (3,1), (4,9), (5,10)), List((1,0), (2,0), (3,1), (4,10), (5,9)), ...
+distribucion(8,4,6) //List(List((1,0), (2,0), (3,2), (4,6)), List((1,0), (2,0), (3,3), (4,5)), List((1,0), (2,0), (3,4), (4,4)), List((1,0), (2,0), (3,5), (4,3)), ...
 
 //Preubas para agrupaciones
 
-agrupaciones(0)
-agrupaciones(1)
-agrupaciones(2)
-agrupaciones(3)
-agrupaciones(4)
-agrupaciones(5)
-agrupaciones(6)
-agrupaciones(7)
+agrupaciones(0) //List(List())
+agrupaciones(1) //List(List(1))
+agrupaciones(2) //List(List(2))
+agrupaciones(3) //List(List(1, 2), List(3))
+agrupaciones(4) //List(List(1, 3), List(4))
+agrupaciones(5) //List(List(1, 4), List(2, 3), List(5))
+agrupaciones(6) //List(List(1, 2, 3), List(1, 5), List(2, 4), List(6))
+agrupaciones(7) //List(List(1, 2, 4), List(1, 6), List(2, 5), List(3, 4), List(7))
 //agrupaciones(8)
+//agrupaciones(9)
 //agrupaciones(10)
 
