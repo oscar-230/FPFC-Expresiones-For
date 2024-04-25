@@ -9,10 +9,10 @@ import Canicas._
 /*
 Aclaracion:
 Se presentan los casos de prueba para las funciones solicitadas,
-sin embargo, algunos casos de prueba fallan por falta de memoria,
-estos resultados quedan comentados,aun así, en la argumentacion
-del informe se demuestra que los casos son correctos si se tiene
-suficiente memoria.
+sin embargo, algunos casos de prueba fallan para las funciones mezclar,
+distribuir y agrupar por falta de memoria,estos resultados quedan comentados,
+aun así, en la argumentacion del informe se demuestra que los casos son
+correctos si se tiene suficiente memoria.
 Cuando se espera el tiempo suficiente se presenta este mensaje:
 java.lang.OutOfMemoryError: GC overhead limit exceeded
  */
@@ -32,6 +32,9 @@ canicasPosiblesFrasco(10, 6) //List((10,0), (10,1), (10,2), (10,3), (10,4), (10,
 canicasPosiblesFrasco(4, 10) //List((4,0), (4,1), (4,2), (4,3), (4,4), (4,5), (4,6), (4,7), (4,8), (4,9), (4,10))
 canicasPosiblesFrasco(1, 10) //List((1,0), (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10))
 canicasPosiblesFrasco(1, 20) //List((1,0), (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), ... , (1,20))
+canicasPosiblesFrasco(4,60) //List((4,0), (4,1), (4,2), (4,3), (4,4), (4,5), (4,6), (4,7), (4,8), (4,9), (4,10), (4,11), (4,12), (4,13), (4,14), ...
+canicasPosiblesFrasco(6,10000) //List((6,0), (6,1), (6,2), (6,3), (6,4), (6,5), (6,6), (6,7), (6,8), (6,9), (6,10), (6,11), (6,12), (6,13), (6,14), ...
+canicasPosiblesFrasco(40,500000) //List((40,0), (40,1), (40,2), (40,3), (40,4), (40,5), (40,6), (40,7), (40,8), (40,9), (40,10), (40,11), (40,12), ...
 
 //Pruebas para canicasPorFrasco
 
@@ -48,6 +51,7 @@ canicasPorFrasco(9,15) //List(List((1,0), (1,1), (1,2), (1,3), (1,4), (1,5), (1,
 canicasPorFrasco(100,50) //List(List((1,0), (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11), (1,12), ... , (2,43), (2,44), ..., (100,50)
 canicasPorFrasco(500,100) //List(List((1,0), (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11), (1,12), ..., (1,93), (1,94), (1,95)...(500,100  )
 canicasPorFrasco(1,100) //List(List((1,0), (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11), (1,12), ..., (1,93), (1,94), (1,95)..., (1,100)
+canicasPorFrasco(9,50000) //List(List((1,0), (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11), (1,12), (1,13), (1,14), (1,15), (1,16), (1,17), ....,(9,50000)
 
 //Pruebas para mezclarCanicas
 
@@ -59,9 +63,15 @@ mezclarLCanicas(canicasPorFrasco(2,2)) //List(List((1,0), (2,0)), List((1,0), (2
 mezclarLCanicas(canicasPorFrasco(2,3)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,3), (2,3)))
 mezclarLCanicas(canicasPorFrasco(2,4)) //List(List((1,0), (2,0)), List((1,0), (2,1)), ..., List((1,4), (2,4)))
 mezclarLCanicas(canicasPorFrasco(3,5)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0),...
+mezclarLCanicas(canicasPorFrasco(3,10)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0), (2,0), (3,2)), List((1,0), (2,0), (3,3)), ...
+mezclarLCanicas(canicasPorFrasco(3,100)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0), (2,0), (3,2)), List((1,0), (2,0), (3,3)),...
+mezclarLCanicas(canicasPorFrasco(3,200)) //List(List((1,0), (2,0), (3,0)), List((1,0), (2,0), (3,1)), List((1,0), (2,0), (3,2)), List((1,0), (2,0), (3,3)), ...
 mezclarLCanicas(canicasPorFrasco(8,4)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0)), ... (8,1)), List((1,0), ...
+mezclarLCanicas(canicasPorFrasco(9,4)) // List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0)), List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,1), ...
 mezclarLCanicas(canicasPorFrasco(10,2)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0), ... (9,1), (10,1)), ...,(7,0), (8,1), (9,0)...
-mezclarLCanicas(canicasPorFrasco(10,3)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0), ....,(10,3)), List((1,0), (2,0), (3,0), ...(7,0), (8,0), (9,2)...
+//mezclarLCanicas(canicasPorFrasco(10,3)) //List(List((1,0), (2,0), (3,0), (4,0), (5,0), (6,0), (7,0), (8,0), ....,(10,3)), List((1,0), (2,0), (3,0), ...(7,0), (8,0), (9,2)...
+//mezclarLCanicas(canicasPorFrasco(9,5))
+//mezclarLCanicas(canicasPorFrasco(9,6))
 //mezclarLCanicas(canicasPorFrasco(10,4))
 
 //Pruebas para distribucion
@@ -78,6 +88,8 @@ distribucion(10,3,5) //List(List((1,0), (2,5), (3,5)), List((1,1), (2,4), (3,5))
 distribucion(11,4,5) //List(List((1,0), (2,1), (3,5), (4,5)), List((1,0), (2,2), (3,4), (4,5)), List((1,0), (2,2), (3,5), (4,4)), List((1,0), (2,3), (3,3), (4,5)), ...
 distribucion(20,5,10) //List(List((1,0), (2,0), (3,0), (4,10), (5,10)), List((1,0), (2,0), (3,1), (4,9), (5,10)), List((1,0), (2,0), (3,1), (4,10), (5,9)), ...
 distribucion(8,4,6) //List(List((1,0), (2,0), (3,2), (4,6)), List((1,0), (2,0), (3,3), (4,5)), List((1,0), (2,0), (3,4), (4,4)), List((1,0), (2,0), (3,5), (4,3)), ...
+//distribucion(100,40,8)
+//distribucion(200,30,11)
 
 //Preubas para agrupaciones
 
